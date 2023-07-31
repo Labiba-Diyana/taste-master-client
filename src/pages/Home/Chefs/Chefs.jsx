@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import Chef from "./Chef";
 
 
 const Chefs = () => {
@@ -9,13 +10,16 @@ const Chefs = () => {
     useEffect(() => {
         fetch('http://localhost:5000/chefs')
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setChefs(data))
     }, [])
 
 
     return (
         <div>
-            
+            {
+                chefs.map(chef => <Chef key={chef.id}
+                chef={chef}></Chef>)
+            }
         </div>
     );
 };
