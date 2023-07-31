@@ -16,11 +16,11 @@ const Chefs = () => {
 
 
     return (
-        <div className="w-10/12 mx-auto text-center my-20 lg:my-36">
+        <div className="lg:w-10/12 mx-auto text-center my-20 lg:my-36">
            <SectionTitle heading="Renowned Chefs" subHeading="Here are some of ours prominent chefs"></SectionTitle>
-            <div className="grid grid-cols-3 gap-y-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center gap-y-10">
                 {
-                    chefs.map(chef => <Chef key={chef.id}
+                    chefs.map(chef => <Chef key={chef._id}
                         chef={chef}></Chef>)
                 }
             </div>
