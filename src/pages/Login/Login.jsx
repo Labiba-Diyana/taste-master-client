@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import GoogleLogin from "../../components/SocialLogin/GoogleLogin";
+import GitHubLogin from "../../components/SocialLogin/GitHubLogin";
 
 
 const Login = () => {
     const [error, setError] = useState('');
-    const {loginUser} = useContext(AuthContext);
+    const { loginUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -21,15 +23,15 @@ const Login = () => {
         console.log(email, password);
 
         loginUser(email, password)
-        .then(result => {           
-            const user = result.user;
-            console.log(user);
-            setError('');
-            navigate(from, { replace: true });
-        })
-        .catch(error => {
-            setError(error.message);
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+                setError(error.message);
+            })
     }
 
     return (
@@ -59,6 +61,11 @@ const Login = () => {
                         </div>
                     </form>
                     <p className="px-10 mt-[-20px] text-[#DAA425] text-base font-semibold"><Link to="/register">New here? Create a new account</Link></p>
+                    <div className="divider px-8"></div>
+                    <div className="flex items-center justify-center space-x-5">
+                        <GoogleLogin></GoogleLogin>
+                        <GitHubLogin></GitHubLogin>
+                    </div>
                 </div>
             </div>
         </div>

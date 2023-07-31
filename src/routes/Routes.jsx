@@ -7,6 +7,7 @@ import ViewRecipes from "../pages/ViewRecipes/ViewRecipes";
 import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import Blog from "../pages/Blog/Blog";
+import LostPage from "../pages/LostPage/LostPage";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '*',
+    element: <LostPage></LostPage>
+  }
 ]);
 
 export default router;
