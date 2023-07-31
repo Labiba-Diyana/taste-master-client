@@ -4,9 +4,7 @@ import SectionTitle from '../../../components/SectionTitle';
 const Testimonial = () => {
     return (
         <div className="text-center my-20 lg:my-36 w-10/12 mx-auto">
-            <div className='mt-10 mb-16'>
-                <SectionTitle heading="Customer Review" subHeading="Here is some of our satisfied customer review."></SectionTitle>
-            </div>
+            <SectionTitle heading="Customer Review" subHeading="Here are some of our satisfied customer review."></SectionTitle>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div className="card shadow-xl rounded-none border border-stone-200">
                     <div className="avatar flex justify-center">

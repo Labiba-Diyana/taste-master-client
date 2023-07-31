@@ -1,16 +1,20 @@
 
 
 const Chef = ({ chef }) => {
-    console.log(chef);
-    
+    const {picture, name, experience, recipes, likes } = chef;
+
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+        <div className="card rounded-none p-10 w-96 bg-base-100 shadow-xl">
+            <figure className="shadow-xl"><img className="w-full h-[300px] border-double border-8 border-[#DAA425]" src={picture} alt="Shoes" /></figure>
+            <div className="text-start mt-8 space-y-5">
+                <h2 className="text-2xl font-extrabold text-center">{name}</h2>
+                <div className="flex justify-between items-center text-xl font-normal italic">
+                <p>Experience: {experience} years.</p>
+                <p>Recipes: {recipes}.</p>
+                </div>
+                <div className="flex justify-between items-center text-xl font-normal italic">
+                   <p>Likes: {likes}</p>
+                   <button className="btn bg-white border-none text-lg font-semibold  italic text-[#DAA425]">View Recipes</button>
                 </div>
             </div>
         </div>
