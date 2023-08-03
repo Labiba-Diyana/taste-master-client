@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import GoogleLogin from "../../components/SocialLogin/GoogleLogin";
 import GitHubLogin from "../../components/SocialLogin/GitHubLogin";
+import bg from "../../assets/custom-images/login-bg.png"
+import img from "../../assets/custom-images/login.png"
 
 
 const Login = () => {
@@ -35,14 +37,14 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div style={{backgroundImage: `url(${bg})`}} className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <img src={img} alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full pb-6 max-w-lg shadow-2xl bg-base-100">
                     <form onSubmit={handleLogin} className="card-body">
+                    <h3 className="text-center text-3xl font-bold mb-6 mt-6">Login</h3>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
