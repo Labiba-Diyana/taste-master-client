@@ -22,9 +22,9 @@ const ViewRecipes = () => {
                 <div className="italic font-normal text-xl space-y-7 pl-7 border-l-4 border-[#DAA425]">
                     <h2 className="text-4xl font-extrabold">{name}</h2>
                     <p>Bio: {bio}</p>
-                    <p>Experience: {experience}</p>
-                    <p>Recipes: {recipes}</p>
-                    <p>Likes: {likes}</p>
+                    <p>Experience: {experience} years.</p>
+                    <p>Recipes: {recipes}.</p>
+                    <p>Likes: {likes}.</p>
                 </div>
             </div>
             <div className="mt-20 grid grid-cols-3">

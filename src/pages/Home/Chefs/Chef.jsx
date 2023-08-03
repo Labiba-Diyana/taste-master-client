@@ -8,8 +8,8 @@ const Chef = ({ chef }) => {
         <div className="card rounded-none p-10 w-72 lg:w-96 bg-base-100 shadow-xl">
             <figure className="shadow-xl"><img className="w-full h-[200px] lg:h-[300px] border-double border-8 border-[#DAA425]" src={picture} alt="Shoes" /></figure>
             <div className="text-start mt-8 space-y-5">
-                <h2 className="text-2xl font-extrabold text-center">{name}</h2>
-                <div className="flex justify-between items-center text-xl font-normal italic">
+                <h2 className="text-xl lg:text-2xl font-extrabold text-center">{name}</h2>
+                <div className="flex justify-between items-center text-lg lg:text-xl font-normal italic">
                 <p>Experience: {experience} years.</p>
                 <p>Recipes: {recipes}.</p>
                 </div>
