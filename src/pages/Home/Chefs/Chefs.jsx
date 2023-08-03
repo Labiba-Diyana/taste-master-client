@@ -9,7 +9,7 @@ const Chefs = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/chefs')
+        fetch('https://taste-master-server-labiba-diyana.vercel.app/chefs')
             .then(res => res.json())
             .then(data => setChefs(data))
     }, [])

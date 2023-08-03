@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import Blog from "../pages/Blog/Blog";
 import LostPage from "../pages/LostPage/LostPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +21,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/viewRecipes/:id",
-        element: <ViewRecipes></ViewRecipes>,
-        loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)
+        element: <PrivateRoute><ViewRecipes></ViewRecipes></PrivateRoute>,
+        loader: ({params}) => fetch(`https://taste-master-server-labiba-diyana.vercel.app/chefs/${params.id}`)
       },
       {
         path: "/login",

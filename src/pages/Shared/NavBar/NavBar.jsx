@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../../assets/custom-images/logo.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
@@ -6,10 +6,13 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 const NavBar = () => {
     const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handelLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => { 
+                navigate('/login')
+            })
             .catch(error => console.log(error))
     }
 
@@ -51,27 +54,20 @@ const NavBar = () => {
                 </div>
                 <div>
                     {
-                        user?.email ? <>
-
-                            {
-                                user?.displayName && <div className="dropdown dropdown-hover">
-                                    <label tabIndex={0}>
-                                        {
-                                            user?.photoURL &&
-                                            <div className="avatar online">
-                                                <div className="w-12 rounded-full">
-                                                    <img src={user?.photoURL} />
-                                                </div>
-                                            </div>
-                                        }
-                                    </label>
-                                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                        {user?.displayName}
-                                    </ul>
-                                </div>
-
-                            }
-                        </> :
+                        user?.email ?
+                            <div className="dropdown dropdown-hover">
+                                <label tabIndex={0}>
+                                    <div className="avatar online">
+                                        <div className="w-12 rounded-full">
+                                            <img src={user?.photoURL} />
+                                        </div>
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                    {user?.displayName}
+                                </ul>
+                            </div>
+                            :
                             <Link to="/login"><button className="btn bg-[#DAA425] w-20 lg:w-24 text-white rounded-full border-none">Login</button></Link>
                     }
                 </div>

@@ -61,7 +61,7 @@ const Login = () => {
                         </div>
                     </form>
                     <p className="px-10 mt-[-20px] text-[#DAA425] text-base font-semibold"><Link to="/register">New here? Create a new account</Link></p>
-                    <div className="divider px-8"></div>
+                    <div className="divider px-8">OR</div>
                     <div className="flex items-center justify-center space-x-5">
                         <GoogleLogin></GoogleLogin>
                         <GitHubLogin></GitHubLogin>

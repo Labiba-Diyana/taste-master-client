@@ -16,25 +16,25 @@ const Registration = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        if(password.length < 6){
-            setError('Password must be in 6 characters')
+        if (password.length < 6) {
+            setError('Password must be in 6 characters');
         }
 
-        createUser(email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                updateUserProfile(name, photo);
-                setError('')
-            })
-            .catch(error => {
-                console.log(error)
-            })
-        logOut()
-            .then(() => {
-                navigate('/login')
-            })
-            .catch(error => console.log(error))
+        else {
+            createUser(email, password)
+                .then(result => {
+                    const user = result.user;
+                    console.log(user);
+                    updateUserProfile(name, photo)
+                    .then(() => {})
+                    setError('')
+                })
+            logOut()
+                .then(() => {
+                    navigate('/login')
+                })
+                .catch(error => console.log(error))
+        }
     }
 
     return (
